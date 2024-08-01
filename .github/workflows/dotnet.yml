@@ -15,8 +15,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '5.0.x'
-    - name: Dotnet Publish
-      run: dotnet publish . -c Release --output ./Release
+    - name: Publish
+      run: dotnet publish -c Release -o ./publish --runtime win-x64 --self-contained false
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
